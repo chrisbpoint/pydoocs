@@ -20,7 +20,8 @@ COPY src src
 #COPY LICENSE .
 
 
-RUN mkdir build && cd build && cmake .. && make
+RUN apt-get update && apt-get install -y build-essential cmake && \
+    mkdir build && cd build && cmake .. && make
 
 
 ENTRYPOINT ["/bin/bash", "-c"]
