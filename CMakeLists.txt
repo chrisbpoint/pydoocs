@@ -46,7 +46,7 @@ add_library(pydoocs SHARED
         ${INCLUDE}/TdsArrayBuilder.h ${SRC}/TdsArrayBuilder.cc
         ${INCLUDE}/TextBuilder.h ${SRC}/TextBuilder.cc
         ${INCLUDE}/TsFloatArrayBuilder.h ${SRC}/TsFloatArrayBuilder.cc
-        ${INCLUDE}/TsDoubleArrayBuilder.h ${SRC}/TsDoubleArrayBuilder.cc
+        #${INCLUDE}/TsDoubleArrayBuilder.h ${SRC}/TsDoubleArrayBuilder.cc # to add from python3
         ${INCLUDE}/UstrArrayBuilder.h ${SRC}/UstrArrayBuilder.cc
         ${INCLUDE}/XyArrayBuilder.h ${SRC}/XyArrayBuilder.cc
         ${INCLUDE}/XyzsArrayBuilder.h ${SRC}/XyzsArrayBuilder.cc)
