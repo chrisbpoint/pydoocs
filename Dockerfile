@@ -20,11 +20,11 @@ COPY src src
 #COPY LICENSE .
 
 
-RUN apt-get update && apt-get install -y build-essential cmake libldap2-dev && \ 
-    conda update -n base -c defaults conda && \
+RUN conda update -n base -c defaults conda && \
     conda create -n python35 python=3.5 $DEPENDENCIES_CONDA \
     source activate python35 && pip install $DEPENDENCIES_PIP && \
     conda deactivate && \
+    apt-get update && apt-get install -y build-essential cmake libldap2-dev && \    
     mkdir build
   
 ENTRYPOINT ["/bin/bash", "-c"]
