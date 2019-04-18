@@ -20,7 +20,7 @@ COPY src src
 #COPY LICENSE .
 
 
-RUN apt-get update && apt-get install -y build-essential cmake && \
+RUN apt-get update && apt-get install -y build-essential cmake libldap2-dev && \
     mkdir build && cd build && cmake .. && make
 
 
