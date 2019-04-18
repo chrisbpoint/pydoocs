@@ -12,8 +12,9 @@ WORKDIR /workdir
 
 COPY CMakeLists.txt .
 
-COPY include include
-COPY src src
+COPY python3/include python3/include
+COPY python3/src python3/src
+
 #COPY test test
 #COPY setup.py .
 #COPY README.md .

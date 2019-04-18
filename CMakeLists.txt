@@ -11,9 +11,10 @@ include_directories(${NUMPY_INCLUDE_DIR})
 
 #link_directories(doocslibs)
 
+
 add_library(pydoocs SHARED
-        include/hello.h
-        src/hello.cpp)
+        ${VERSION}/include/hello.h
+        ${VERSION}/src/hello.cpp)
 
 target_link_libraries(pydoocs )#libDOOCSapi.a libgul.a pthread ldap lber )
 
