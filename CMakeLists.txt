@@ -3,8 +3,7 @@ project(pydoocs)
 
 set(CMAKE_CXX_STANDARD 11)
 
-include_directories(include)
-include_directories(src)
+include_directories(${VERSION}/include)
 #include_directories(clientlib)
 include_directories(${PYTHON_INCLUDE_DIR})
 include_directories(${NUMPY_INCLUDE_DIR})
