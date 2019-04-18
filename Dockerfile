@@ -7,8 +7,8 @@ ARG DEPENDENCIES_PIP="teamcity-messages"
 
 WORKDIR /workdir
 
-COPY clientlib clientlib
-COPY doocslibs doocslibs
+#COPY clientlib clientlib
+#COPY doocslibs doocslibs
 
 COPY CMakeLists.txt .
 
@@ -20,8 +20,11 @@ COPY src src
 #COPY LICENSE .
 
 
-RUN apt-get update && apt-get install -y build-essential cmake libldap2-dev && \
-    mkdir build && cd build && cmake .. && make
-
-
+RUN apt-get update && apt-get install -y build-essential cmake libldap2-dev && \ 
+    conda update -n base -c defaults conda && \
+    conda create -n python35 python=3.5 $DEPENDENCIES_CONDA \
+    source activate python35 && pip install $DEPENDENCIES_PIP && \
+    conda deactivate && \
+    mkdir build
+  
 ENTRYPOINT ["/bin/bash", "-c"]

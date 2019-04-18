@@ -5,19 +5,17 @@ set(CMAKE_CXX_STANDARD 11)
 
 include_directories(include)
 include_directories(src)
-include_directories(clientlib)
+#include_directories(clientlib)
+include_directories(${PYTHON_INCLUDE_DIR})
+include_directories(${NUMPY_INCLUDE_DIR})
 
-link_directories(doocslibs)
+#link_directories(doocslibs)
 
 add_library(pydoocs SHARED
         include/hello.h
         src/hello.cpp)
 
-# dynamic linking
-#target_link_libraries(pydoocs DOOCSapi)
-
-# static linking
-target_link_libraries(pydoocs libDOOCSapi.a pthread ldap lber libgul.a)
+target_link_libraries(pydoocs )#libDOOCSapi.a libgul.a pthread ldap lber )
 
 set_target_properties(
         pydoocs
@@ -25,3 +23,4 @@ set_target_properties(
         PREFIX ""
         OUTPUT_NAME "pydoocs"
         LINKER_LANGUAGE C)
+

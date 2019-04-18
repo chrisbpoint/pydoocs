@@ -1,4 +1,6 @@
 #include "hello.h"
+#include "Python.h"
+#include <numpy/arrayobject.h>
 
 #include <iostream>
 
