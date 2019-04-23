@@ -3,8 +3,8 @@ project(pydoocs)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(INCLUDE "${VERSION}/include")
-set(SRC "${VERSION}/src")
+set(INCLUDE ${VERSION}/include)
+set(SRC ${VERSION}/src)
 
 include_directories(${INCLUDE})
 include_directories(clientlib)

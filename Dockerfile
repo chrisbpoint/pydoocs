@@ -22,7 +22,6 @@ COPY python2/src python2/src
 #COPY README.md .
 #COPY LICENSE .
 
-
 RUN conda update -n base -c defaults conda && \
     conda create -n python35 python=3.5 $DEPENDENCIES_CONDA && \
     source activate python35 && pip install $DEPENDENCIES_PIP && \
