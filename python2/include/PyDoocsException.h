@@ -140,12 +140,19 @@ public:
      */
     static PyDoocsException wrong_macropulse_format();
   
-   /**
+    /**
      * Method to return the custom exception 'PyDoocsException' for wrong parameter format.
      *
      * @return The custom exception 'PyDoocsException' for wrong parameter format.
      */
     static PyDoocsException wrong_parameter_format();
+
+    /**
+    * Method to return the custom exception 'PyDoocsException' for no history available.
+    *
+    * @return The custom exception 'PyDoocsException' for no history available.
+    */
+    static PyDoocsException no_history_available();
 
 private:
     /*
@@ -171,6 +178,7 @@ private:
     static const char* INVALID_MACROPULSE;
     static const char* WRONG_MACROPULSE_FORMAT;
     static const char* WRONG_PARAMETER_FORMAT;
+    static const char* NO_HISTORY_AVAILABLE;
 };
 
 #endif  // INCLUDE_PYDOOCSEXCEPTION_H_

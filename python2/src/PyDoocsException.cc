@@ -20,6 +20,7 @@ const char* PyDoocsException::SYNCHRONIZATION_NOT_SUPPORTED_YET = "synchronizati
 const char* PyDoocsException::INVALID_MACROPULSE = "invalid macropulse";
 const char* PyDoocsException::WRONG_MACROPULSE_FORMAT = "wrong macropulse format";
 const char* PyDoocsException::WRONG_PARAMETER_FORMAT = "wrong doocs parameter format";
+const char* PyDoocsException::NO_HISTORY_AVAILABLE = "no history available";
 
 
 PyDoocsException PyDoocsException::type_not_supported_yet() {
@@ -85,6 +86,10 @@ PyDoocsException PyDoocsException::wrong_macropulse_format() {
 
 PyDoocsException PyDoocsException::wrong_parameter_format() {
     return exception_of_type(WRONG_PARAMETER_FORMAT);
+}
+
+PyDoocsException PyDoocsException::no_history_available() {
+    return exception_of_type(NO_HISTORY_AVAILABLE);
 }
 
 PyDoocsException PyDoocsException::exception_of_type(const char* error_message) {
