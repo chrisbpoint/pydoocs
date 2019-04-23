@@ -175,6 +175,6 @@ private:
     static const char* MISCELLANEOUS_KEY;
 };
 
-#include "AbstractBaseBuilder.tcc"  // to allow simple builds with templates
+#include "../src/AbstractBaseBuilder.tcc"  // to allow simple builds with templates
 
 #endif  // INCLUDE_ABSTRACTBASEBUILDER_H_
