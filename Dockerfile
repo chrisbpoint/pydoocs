@@ -3,7 +3,7 @@ FROM continuumio/miniconda3
 SHELL ["/bin/bash", "-c"]
 
 ARG DEPENDENCIES_CONDA="numpy conda-build"
-ARG DEPENDENCIES_PIP="teamcity-messages"
+ARG DEPENDENCIES_PIP="pyhamcrest teamcity-messages"
 
 WORKDIR /workdir
 

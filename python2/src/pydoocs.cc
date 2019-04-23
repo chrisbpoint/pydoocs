@@ -13,7 +13,7 @@
 
 
 const char* PYDOOCS_NAME = "pydoocs";
-const char* PYDOOCS_DOC = "Python2 bindings to the standard DOOCS client API written in C/C++.";
+const char* PYDOOCS_DOC = "Python bindings to the standard DOOCS client API written in C/C++.";
 const char* PYDOOCS_VERSION_ATTRIBUTE = "__version__";
 const char* PYDOOCS_VERSION_NUMBER = "2.0.4";
 
