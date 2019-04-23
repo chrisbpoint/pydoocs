@@ -3,27 +3,27 @@
 #include <cmath>
 #include <set>
 
-#include "TsFloatArrayBuilder.h"
+#include "TsDoubleArrayBuilder.h"
 
-
-PyObject* TsFloatArrayBuilder::read(EqAdr* address, EqData* data_to_doocs, EqData* data_from_doocs, PyObject* doocs_parameters) const {
+#include <iostream>
+PyObject* TsDoubleArrayBuilder::read(EqAdr* address, EqData* data_to_doocs, EqData* data_from_doocs, PyObject* doocs_parameters) const {
     if (!doocs_parameters) {
-        return ts_float_array_from(data_from_doocs);
+        return ts_double_array_from(data_from_doocs);
     } else {
 
         u_int seconds;
         u_short milliseconds;
         double time;
         u_short status;
-        float history;
+        double history;
 
         std::vector<double> time_vector;
         std::vector<u_short> status_vector;
-        std::vector<float> history_vector;
+        std::vector<double> history_vector;
 
         std::list<double> time_list;
         std::list<u_short> status_list;
-        std::list<float> history_list;
+        std::list<double> history_list;
 
         auto time_list_it = time_list.begin();
         auto status_list_it = status_list.begin();
@@ -55,7 +55,7 @@ PyObject* TsFloatArrayBuilder::read(EqAdr* address, EqData* data_to_doocs, EqDat
             status_vector.clear();
             history_vector.clear();
             for (int i = 0; i < data_from_doocs->length(); ++i) {
-                data_from_doocs->get_ts_float(&seconds, &milliseconds, &status, &history, i);
+                data_from_doocs->get_ts_double(&seconds, &milliseconds, &status, &history, i);
                 time = seconds + milliseconds / 1e3;
 
                 time_vector.push_back(time);
@@ -116,16 +116,16 @@ PyObject* TsFloatArrayBuilder::read(EqAdr* address, EqData* data_to_doocs, EqDat
     }
 }
 
-PyObject* TsFloatArrayBuilder::ts_float_array_from(EqData* data_from_doocs) const {
+PyObject* TsDoubleArrayBuilder::ts_double_array_from(EqData* data_from_doocs) const {
     u_int seconds;
     u_short milliseconds;
     double time;
     u_short status;
-    float history;
+    double history;
 
     PyObject* history_list = PyList_New(data_from_doocs->length());
     for (int i = 0; i < data_from_doocs->length(); ++i) {
-        data_from_doocs->get_ts_float(&seconds, &milliseconds, &status, &history, i);
+        data_from_doocs->get_ts_double(&seconds, &milliseconds, &status, &history, i);
         time = seconds + milliseconds/1e3;
 
         PyList_SetItem(history_list, i, Py_BuildValue("[ffi]", time, history, status));
@@ -137,6 +137,6 @@ PyObject* TsFloatArrayBuilder::ts_float_array_from(EqData* data_from_doocs) cons
     return built_for_return;
 }
 
-PyObject* TsFloatArrayBuilder::write(EqAdr*, EqData*, EqData*, PyObject*, PyObject*) const {
+PyObject* TsDoubleArrayBuilder::write(EqAdr*, EqData*, EqData*, PyObject*, PyObject*) const {
     throw PyDoocsException::functionality_not_supported_yet();
 }
