@@ -7,17 +7,14 @@ ARG DEPENDENCIES_PIP="teamcity-messages"
 
 WORKDIR /workdir
 
-#COPY clientlib clientlib
-#COPY doocslibs doocslibs
 
 COPY CMakeLists.txt .
 
-COPY python3/include python3/include
-COPY python3/src python3/src
-COPY python2/include python2/include
-COPY python2/src python2/src
+COPY python2 python2
+COPY python3 python3
 
-#COPY test test
+COPY tests tests
+
 #COPY setup.py .
 #COPY README.md .
 #COPY LICENSE .
