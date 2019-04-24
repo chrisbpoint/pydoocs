@@ -4,6 +4,7 @@ SHELL ["/bin/bash", "-c"]
 
 ARG DEPENDENCIES_CONDA="numpy conda-build"
 ARG DEPENDENCIES_PIP="pyhamcrest teamcity-messages"
+ARG BASE_DEPENDENCIES_PIP="cpplint"
 
 WORKDIR /workdir
 
@@ -20,6 +21,7 @@ COPY tests tests
 #COPY LICENSE .
 
 RUN conda update -n base -c defaults conda && \
+    pip install BASE_DEPENDENCIES_PIP && \
     conda create -n python35 python=3.5 $DEPENDENCIES_CONDA && \
     source activate python35 && pip install $DEPENDENCIES_PIP && \
     conda deactivate && \
