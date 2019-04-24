@@ -6,8 +6,8 @@
  *
  * @file pydoocs_read.h
  */
-#ifndef INCLUDE_PYDOOCS_READ_H_
-#define INCLUDE_PYDOOCS_READ_H_
+#ifndef PYTHON3_INCLUDE_PYDOOCS_READ_H_
+#define PYTHON3_INCLUDE_PYDOOCS_READ_H_
 
 #include <Python.h>
 
@@ -34,4 +34,4 @@ extern const char* PYDOOCS_READ_DOC;
  */
 PyObject* pydoocs_read_function(PyObject* Py_UNUSED(ignored), PyObject* args, PyObject* kwargs);
 
-#endif  // INCLUDE_PYDOOCS_READ_H_
+#endif  // PYTHON3_INCLUDE_PYDOOCS_READ_H_

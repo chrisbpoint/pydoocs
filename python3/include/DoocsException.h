@@ -1,5 +1,5 @@
-#ifndef INCLUDE_DOOCSEXCEPTION_H_
-#define INCLUDE_DOOCSEXCEPTION_H_
+#ifndef PYTHON3_INCLUDE_DOOCSEXCEPTION_H_
+#define PYTHON3_INCLUDE_DOOCSEXCEPTION_H_
 
 #include "AbstractBaseException.h"
 
@@ -63,4 +63,4 @@ private:
     static const char* EXCEPTION_MESSAGE_KEY;
 };
 
-#endif  // INCLUDE_DOOCSEXCEPTION_H_
+#endif  // PYTHON3_INCLUDE_DOOCSEXCEPTION_H_

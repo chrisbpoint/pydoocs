@@ -1,5 +1,5 @@
-#ifndef INCLUDE_LONGARRAYBUILDER_H_
-#define INCLUDE_LONGARRAYBUILDER_H_
+#ifndef PYTHON3_INCLUDE_LONGARRAYBUILDER_H_
+#define PYTHON3_INCLUDE_LONGARRAYBUILDER_H_
 
 #include "AbstractBaseBuilder.h"
 
@@ -27,4 +27,4 @@ private:
     PyObject* long_array_from(EqData* data_from_doocs) const;
 };
 
-#endif  // INCLUDE_LONGARRAYBUILDER_H_
+#endif  // PYTHON3_INCLUDE_LONGARRAYBUILDER_H_

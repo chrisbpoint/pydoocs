@@ -1,5 +1,5 @@
-#ifndef INCLUDE_PY_OBJECT_BUILDER_H_
-#define INCLUDE_PY_OBJECT_BUILDER_H_
+#ifndef PYTHON2_INCLUDE_PY_OBJECT_BUILDER_H_
+#define PYTHON2_INCLUDE_PY_OBJECT_BUILDER_H_
 
 #include "Python.h"
 
@@ -50,4 +50,4 @@ namespace py_object_builder {
                     PyObject* doocs_parameters);
 }  // namespace py_object_builder
 
-#endif  // INCLUDE_PY_OBJECT_BUILDER_H_
+#endif  // PYTHON2_INCLUDE_PY_OBJECT_BUILDER_H_

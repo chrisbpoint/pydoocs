@@ -1,5 +1,5 @@
-#ifndef INCLUDE_SPECTRUMBUILDER_H_
-#define INCLUDE_SPECTRUMBUILDER_H_
+#ifndef PYTHON3_INCLUDE_SPECTRUMBUILDER_H_
+#define PYTHON3_INCLUDE_SPECTRUMBUILDER_H_
 
 #include "AbstractBaseBuilder.h"
 
@@ -27,4 +27,4 @@ private:
     PyObject* spectrum_from(EqData* data_from_doocs) const;
 };
 
-#endif  // INCLUDE_SPECTRUMBUILDER_H_
+#endif  // PYTHON3_INCLUDE_SPECTRUMBUILDER_H_

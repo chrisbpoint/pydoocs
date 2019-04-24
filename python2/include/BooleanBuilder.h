@@ -1,5 +1,5 @@
-#ifndef INCLUDE_BOOLEANBUILDER_H_
-#define INCLUDE_BOOLEANBUILDER_H_
+#ifndef PYTHON2_INCLUDE_BOOLEANBUILDER_H_
+#define PYTHON2_INCLUDE_BOOLEANBUILDER_H_
 
 #include "AbstractBaseBuilder.h"
 
@@ -21,4 +21,4 @@ public:
                     PyObject* data_from_python, PyObject* doocs_parameters) const override;
 };
 
-#endif  // INCLUDE_BOOLEANBUILDER_H_
+#endif  // PYTHON2_INCLUDE_BOOLEANBUILDER_H_

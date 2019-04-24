@@ -1,5 +1,5 @@
-#ifndef INCLUDE_BUILD_UTIL_H_
-#define INCLUDE_BUILD_UTIL_H_
+#ifndef PYTHON3_INCLUDE_BUILD_UTIL_H_
+#define PYTHON3_INCLUDE_BUILD_UTIL_H_
 
 #include <Python.h>
 
@@ -45,4 +45,4 @@ namespace build_util {
     PyObject* write(const char* doocs_address, PyObject* data_from_python, PyObject* doocs_parameters);
 }  // namespace build_util
 
-#endif  // INCLUDE_BUILD_UTIL_H_
+#endif  // PYTHON3_INCLUDE_BUILD_UTIL_H_

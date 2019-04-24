@@ -1,5 +1,5 @@
-#ifndef INCLUDE_NAMESBUILDER_H_
-#define INCLUDE_NAMESBUILDER_H_
+#ifndef PYTHON2_INCLUDE_NAMESBUILDER_H_
+#define PYTHON2_INCLUDE_NAMESBUILDER_H_
 
 #include <Python.h>
 
@@ -24,4 +24,4 @@ public:
     PyObject* names(EqData* data_from_doocs) const;
 };
 
-#endif  // INCLUDE_NAMESBUILDER_H_
+#endif  // PYTHON2_INCLUDE_NAMESBUILDER_H_

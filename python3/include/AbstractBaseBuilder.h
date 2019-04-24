@@ -1,5 +1,5 @@
-#ifndef INCLUDE_ABSTRACTBASEBUILDER_H_
-#define INCLUDE_ABSTRACTBASEBUILDER_H_
+#ifndef PYTHON3_INCLUDE_ABSTRACTBASEBUILDER_H_
+#define PYTHON3_INCLUDE_ABSTRACTBASEBUILDER_H_
 
 #include <Python.h>
 
@@ -177,4 +177,4 @@ private:
 
 #include "../src/AbstractBaseBuilder.tcc"  // to allow simple builds with templates
 
-#endif  // INCLUDE_ABSTRACTBASEBUILDER_H_
+#endif  // PYTHON3_INCLUDE_ABSTRACTBASEBUILDER_H_

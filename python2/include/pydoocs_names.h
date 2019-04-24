@@ -6,8 +6,8 @@
  *
  * @file pydoocs_names.h
  */
-#ifndef INCLUDE_PYDOOCS_NAMES_H_
-#define INCLUDE_PYDOOCS_NAMES_H_
+#ifndef PYTHON2_INCLUDE_PYDOOCS_NAMES_H_
+#define PYTHON2_INCLUDE_PYDOOCS_NAMES_H_
 
 #include <Python.h>
 
@@ -33,4 +33,4 @@ extern const char* PYDOOCS_NAMES_DOC;
  */
 PyObject* pydoocs_names_function(PyObject*, PyObject* args);
 
-#endif  // INCLUDE_PYDOOCS_NAMES_H_
+#endif  // PYTHON2_INCLUDE_PYDOOCS_NAMES_H_

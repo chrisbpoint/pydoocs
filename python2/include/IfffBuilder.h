@@ -1,5 +1,5 @@
-#ifndef INCLUDE_IFFFBUILDER_H_
-#define INCLUDE_IFFFBUILDER_H_
+#ifndef PYTHON2_INCLUDE_IFFFBUILDER_H_
+#define PYTHON2_INCLUDE_IFFFBUILDER_H_
 
 #include "AbstractBaseBuilder.h"
 
@@ -27,4 +27,4 @@ private:
     static const int IFFF_INPUT_SIZE;
 };
 
-#endif  // INCLUDE_IFFFBUILDER_H_
+#endif  // PYTHON2_INCLUDE_IFFFBUILDER_H_

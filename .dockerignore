@@ -1,6 +1,13 @@
 .git
 .gitignore
-CPPLINT.cfg
 Dockerfile
 TODO
-build
+
+clientlib
+doocslibs
+
+build*
+
+__pycache__
+
+.idea

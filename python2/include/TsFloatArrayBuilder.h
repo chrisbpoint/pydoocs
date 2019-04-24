@@ -1,5 +1,5 @@
-#ifndef INCLUDE_TSFLOATARRAYBUILDER_H_
-#define INCLUDE_TSFLOATARRAYBUILDER_H_
+#ifndef PYTHON2_INCLUDE_TSFLOATARRAYBUILDER_H_
+#define PYTHON2_INCLUDE_TSFLOATARRAYBUILDER_H_
 
 #include "AbstractBaseBuilder.h"
 
@@ -27,4 +27,4 @@ private:
     PyObject* ts_float_array_from(EqData* data_from_doocs) const;
 };
 
-#endif  // INCLUDE_TSFLOATARRAYBUILDER_H_
+#endif  // PYTHON2_INCLUDE_TSFLOATARRAYBUILDER_H_

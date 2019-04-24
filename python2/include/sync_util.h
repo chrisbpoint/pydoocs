@@ -1,5 +1,5 @@
-#ifndef INCLUDE_SYNC_UTIL_H_
-#define INCLUDE_SYNC_UTIL_H_
+#ifndef PYTHON2_INCLUDE_SYNC_UTIL_H_
+#define PYTHON2_INCLUDE_SYNC_UTIL_H_
 
 #include <Python.h>
 
@@ -32,4 +32,4 @@ namespace sync_util {
     void check_synchronization_for(PyObject* built_for_return, PyObject* macropulse_number);
 }  // namespace sync_util
 
-#endif  // INCLUDE_SYNC_UTIL_H_
+#endif  // PYTHON2_INCLUDE_SYNC_UTIL_H_

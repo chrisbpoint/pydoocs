@@ -1,5 +1,5 @@
-#ifndef INCLUDE_DOUBLEARRAYBUILDER_H_
-#define INCLUDE_DOUBLEARRAYBUILDER_H_
+#ifndef PYTHON2_INCLUDE_DOUBLEARRAYBUILDER_H_
+#define PYTHON2_INCLUDE_DOUBLEARRAYBUILDER_H_
 
 #include "AbstractBaseBuilder.h"
 
@@ -27,4 +27,4 @@ private:
     PyObject* double_array_from(EqData* data_from_doocs) const;
 };
 
-#endif  // INCLUDE_DOUBLEARRAYBUILDER_H_
+#endif  // PYTHON2_INCLUDE_DOUBLEARRAYBUILDER_H_

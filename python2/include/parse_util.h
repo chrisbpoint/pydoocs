@@ -1,5 +1,5 @@
-#ifndef INCLUDE_PARSE_UTIL_H_
-#define INCLUDE_PARSE_UTIL_H_
+#ifndef PYTHON2_INCLUDE_PARSE_UTIL_H_
+#define PYTHON2_INCLUDE_PARSE_UTIL_H_
 
 #include <Python.h>
 
@@ -64,4 +64,4 @@ namespace parse_util {
     extern const char* DATA_KEYWORD;
 }  // namespace parse_util
 
-#endif  // INCLUDE_PARSE_UTIL_H_
+#endif  // PYTHON2_INCLUDE_PARSE_UTIL_H_

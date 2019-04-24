@@ -1,5 +1,5 @@
-#ifndef INCLUDE_GSPECTRUMBUILDER_H_
-#define INCLUDE_GSPECTRUMBUILDER_H_
+#ifndef PYTHON3_INCLUDE_GSPECTRUMBUILDER_H_
+#define PYTHON3_INCLUDE_GSPECTRUMBUILDER_H_
 
 #include "AbstractBaseBuilder.h"
 
@@ -27,4 +27,4 @@ private:
     PyObject* gspectrum_from(EqData* data_from_doocs) const;
 };
 
-#endif  // INCLUDE_GSPECTRUMBUILDER_H_
+#endif  // PYTHON3_INCLUDE_GSPECTRUMBUILDER_H_

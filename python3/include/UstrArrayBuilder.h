@@ -1,5 +1,5 @@
-#ifndef INCLUDE_USTRARRAYBUILDER_H_
-#define INCLUDE_USTRARRAYBUILDER_H_
+#ifndef PYTHON3_INCLUDE_USTRARRAYBUILDER_H_
+#define PYTHON3_INCLUDE_USTRARRAYBUILDER_H_
 
 #include "AbstractBaseBuilder.h"
 
@@ -27,4 +27,4 @@ private:
     PyObject* ustr_array_from(EqData* data_from_doocs) const;
 };
 
-#endif  // INCLUDE_USTRARRAYBUILDER_H_
+#endif  // PYTHON3_INCLUDE_USTRARRAYBUILDER_H_

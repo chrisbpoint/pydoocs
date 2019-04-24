@@ -16,7 +16,7 @@ link_directories(doocslibs)
 add_library(pydoocs SHARED
         ${INCLUDE}/AbstractBaseBuilder.h ${SRC}/AbstractBaseBuilder.cc ${SRC}/AbstractBaseBuilder.tcc
         ${INCLUDE}/AbstractBaseException.h ${SRC}/AbstractBaseException.cc
-        ${INCLUDE}/BooleanBuilder.h  ${SRC}/BooleanBuilder.cc
+        ${INCLUDE}/BooleanBuilder.h ${SRC}/BooleanBuilder.cc
         ${INCLUDE}/build_util.h ${SRC}/build_util.cc
         ${INCLUDE}/ByteArrayBuilder.h ${SRC}/ByteArrayBuilder.cc
         ${INCLUDE}/DoocsException.h ${SRC}/DoocsException.cc
@@ -46,7 +46,7 @@ add_library(pydoocs SHARED
         ${INCLUDE}/TdsArrayBuilder.h ${SRC}/TdsArrayBuilder.cc
         ${INCLUDE}/TextBuilder.h ${SRC}/TextBuilder.cc
         ${INCLUDE}/TsFloatArrayBuilder.h ${SRC}/TsFloatArrayBuilder.cc
-        ${INCLUDE}/TsDoubleArrayBuilder.h ${SRC}/TsDoubleArrayBuilder.cc 
+        ${INCLUDE}/TsDoubleArrayBuilder.h ${SRC}/TsDoubleArrayBuilder.cc
         ${INCLUDE}/UstrArrayBuilder.h ${SRC}/UstrArrayBuilder.cc
         ${INCLUDE}/XyArrayBuilder.h ${SRC}/XyArrayBuilder.cc
         ${INCLUDE}/XyzsArrayBuilder.h ${SRC}/XyzsArrayBuilder.cc)
@@ -59,4 +59,3 @@ set_target_properties(
         PREFIX ""
         OUTPUT_NAME "pydoocs"
         LINKER_LANGUAGE C)
-

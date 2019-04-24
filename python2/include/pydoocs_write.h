@@ -6,8 +6,8 @@
  *
  * @file pydoocs_write.h
  */
-#ifndef INCLUDE_PYDOOCS_WRITE_H_
-#define INCLUDE_PYDOOCS_WRITE_H_
+#ifndef PYTHON2_INCLUDE_PYDOOCS_WRITE_H_
+#define PYTHON2_INCLUDE_PYDOOCS_WRITE_H_
 
 #include <Python.h>
 
@@ -34,4 +34,4 @@ extern const char* PYDOOCS_WRITE_DOC;
  */
 PyObject* pydoocs_write_function(PyObject*, PyObject* args, PyObject* kwargs);
 
-#endif  // INCLUDE_PYDOOCS_WRITE_H_
+#endif  // PYTHON2_INCLUDE_PYDOOCS_WRITE_H_

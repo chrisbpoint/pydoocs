@@ -1,5 +1,5 @@
-#ifndef INCLUDE_TDSARRAYBUILDER_H_
-#define INCLUDE_TDSARRAYBUILDER_H_
+#ifndef PYTHON2_INCLUDE_TDSARRAYBUILDER_H_
+#define PYTHON2_INCLUDE_TDSARRAYBUILDER_H_
 
 #include "AbstractBaseBuilder.h"
 
@@ -27,4 +27,4 @@ private:
     PyObject* tds_array_from(EqData* data_from_doocs) const;
 };
 
-#endif  // INCLUDE_TDSARRAYBUILDER_H_
+#endif  // PYTHON2_INCLUDE_TDSARRAYBUILDER_H_

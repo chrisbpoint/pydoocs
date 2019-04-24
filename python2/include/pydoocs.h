@@ -6,8 +6,8 @@
  *
  * @file pydoocs.h
  */
-#ifndef INCLUDE_PYDOOCS_H_
-#define INCLUDE_PYDOOCS_H_
+#ifndef PYTHON2_INCLUDE_PYDOOCS_H_
+#define PYTHON2_INCLUDE_PYDOOCS_H_
 
 #include "PyDoocsException.h"
 #include "DoocsException.h"
@@ -43,4 +43,4 @@ PyObject* PyDoocsException::OBJECT;
  */
 PyObject* DoocsException::OBJECT;
 
-#endif  // INCLUDE_PYDOOCS_H_
+#endif  // PYTHON2_INCLUDE_PYDOOCS_H_

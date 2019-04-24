@@ -1,5 +1,5 @@
-#ifndef INCLUDE_INTEGERARRAYBUILDER_H_
-#define INCLUDE_INTEGERARRAYBUILDER_H_
+#ifndef PYTHON3_INCLUDE_INTEGERARRAYBUILDER_H_
+#define PYTHON3_INCLUDE_INTEGERARRAYBUILDER_H_
 
 #include "AbstractBaseBuilder.h"
 
@@ -27,4 +27,4 @@ private:
     PyObject* integer_array_from(EqData* data_from_doocs) const;
 };
 
-#endif  // INCLUDE_INTEGERARRAYBUILDER_H_
+#endif  // PYTHON3_INCLUDE_INTEGERARRAYBUILDER_H_

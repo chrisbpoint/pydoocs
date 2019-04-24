@@ -66,7 +66,7 @@ namespace sync_util {
             if (PyList_Size(doocs_parameters) != IIII_SIZE) {
                 throw PyDoocsException::input_list_size_mismatch();
             }
-            // TODO 
+            // TODO(cbehrens):
             // Normally one would have to check now on the plausibility of the input data, but we'll implement it later
 
             IIII iiii_data;
@@ -78,7 +78,7 @@ namespace sync_util {
             iiii_data.i3_data = static_cast<int>(PyLong_AsLong(PyList_GetItem(doocs_parameters, 2)));
             iiii_data.i4_data = static_cast<int>(PyLong_AsLong(PyList_GetItem(doocs_parameters, 3)));
 
-            // TODO error handling
+            // TODO(cbehrens): error handling
             data_to_doocs->set(iiii_data.i1_data, iiii_data.i2_data, iiii_data.i3_data, iiii_data.i4_data);
         }
     }

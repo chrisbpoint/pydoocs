@@ -1,5 +1,5 @@
-#ifndef INCLUDE_TSDOUBLEARRAYBUILDER_H_
-#define INCLUDE_TSDOUBLEARRAYBUILDER_H_
+#ifndef PYTHON2_INCLUDE_TSDOUBLEARRAYBUILDER_H_
+#define PYTHON2_INCLUDE_TSDOUBLEARRAYBUILDER_H_
 
 #include "AbstractBaseBuilder.h"
 
@@ -27,4 +27,4 @@ private:
     PyObject* ts_double_array_from(EqData* data_from_doocs) const;
 };
 
-#endif  // INCLUDE_TSDOUBLEARRAYBUILDER_H_
+#endif  // PYTHON2_INCLUDE_TSDOUBLEARRAYBUILDER_H_

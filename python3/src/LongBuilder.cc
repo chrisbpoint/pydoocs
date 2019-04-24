@@ -17,7 +17,7 @@ PyObject* LongBuilder::write(EqAdr* address, EqData* data_to_doocs, EqData* data
         }
 
         return build_write(address, data_to_doocs, data_from_doocs,
-                           static_cast<long long>(PyLong_AsLong(data_from_python)));
+                static_cast<long long>(PyLong_AsLong(data_from_python)));  //NOLINT: int64 vs long long
     } else {
         throw PyDoocsException::functionality_not_supported_yet();
     }

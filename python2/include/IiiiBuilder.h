@@ -1,5 +1,5 @@
-#ifndef INCLUDE_IIIIBUILDER_H_
-#define INCLUDE_IIIIBUILDER_H_
+#ifndef PYTHON2_INCLUDE_IIIIBUILDER_H_
+#define PYTHON2_INCLUDE_IIIIBUILDER_H_
 
 #include "AbstractBaseBuilder.h"
 
@@ -27,4 +27,4 @@ private:
     static const int IIII_INPUT_SIZE;
 };
 
-#endif  // INCLUDE_IIIIBUILDER_H_
+#endif  // PYTHON2_INCLUDE_IIIIBUILDER_H_

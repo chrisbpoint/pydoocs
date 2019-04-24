@@ -34,7 +34,7 @@ PyObject* LongArrayBuilder::write(EqAdr* address, EqData* data_to_doocs, EqData*
             throw PyDoocsException::input_list_too_large();
         }
 
-        std::vector<long long> array_data;
+        std::vector<long long> array_data;  //NOLINT: int64 vs long long
         for (std::int64_t i = 0; i < PyList_Size(data_from_python); ++i) {
             array_data.push_back(static_cast<std::int64_t>(PyLong_AsLong(PyList_GetItem(data_from_python, i))));
         }

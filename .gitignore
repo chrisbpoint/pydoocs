@@ -1,3 +1,8 @@
-build
+clientlib
+doocslibs
+
+build*
 
 __pycache__
+
+.idea

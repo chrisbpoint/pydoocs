@@ -1,5 +1,5 @@
-#ifndef INCLUDE_INTEGERBUILDER_H_
-#define INCLUDE_INTEGERBUILDER_H_
+#ifndef PYTHON2_INCLUDE_INTEGERBUILDER_H_
+#define PYTHON2_INCLUDE_INTEGERBUILDER_H_
 
 #include "AbstractBaseBuilder.h"
 
@@ -21,4 +21,4 @@ public:
                     PyObject* data_from_python, PyObject* doocs_parameters) const override;
 };
 
-#endif  // INCLUDE_INTEGERBUILDER_H_
+#endif  // PYTHON2_INCLUDE_INTEGERBUILDER_H_

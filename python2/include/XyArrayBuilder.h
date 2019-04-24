@@ -1,5 +1,5 @@
-#ifndef INCLUDE_XYARRAYBUILDER_H_
-#define INCLUDE_XYARRAYBUILDER_H_
+#ifndef PYTHON2_INCLUDE_XYARRAYBUILDER_H_
+#define PYTHON2_INCLUDE_XYARRAYBUILDER_H_
 
 #include "AbstractBaseBuilder.h"
 
@@ -27,4 +27,4 @@ private:
     PyObject* xy_array_from(EqData* data_from_doocs) const;
 };
 
-#endif  // INCLUDE_XYARRAYBUILDER_H_
+#endif  // PYTHON2_INCLUDE_XYARRAYBUILDER_H_

@@ -1,5 +1,5 @@
-#ifndef INCLUDE_STRINGBUILDER_H_
-#define INCLUDE_STRINGBUILDER_H_
+#ifndef PYTHON2_INCLUDE_STRINGBUILDER_H_
+#define PYTHON2_INCLUDE_STRINGBUILDER_H_
 
 #include "AbstractBaseBuilder.h"
 
@@ -21,4 +21,4 @@ public:
                     PyObject* data_from_python, PyObject* doocs_parameters) const override;
 };
 
-#endif  // INCLUDE_STRINGBUILDER_H_
+#endif  // PYTHON2_INCLUDE_STRINGBUILDER_H_

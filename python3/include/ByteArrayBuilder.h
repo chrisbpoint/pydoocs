@@ -1,5 +1,5 @@
-#ifndef INCLUDE_BYTEARRAYBUILDER_H_
-#define INCLUDE_BYTEARRAYBUILDER_H_
+#ifndef PYTHON3_INCLUDE_BYTEARRAYBUILDER_H_
+#define PYTHON3_INCLUDE_BYTEARRAYBUILDER_H_
 
 #include "AbstractBaseBuilder.h"
 
@@ -27,4 +27,4 @@ private:
     PyObject* byte_array_from(EqData* data_from_doocs) const;
 };
 
-#endif  // INCLUDE_BYTEARRAYBUILDER_H_
+#endif  // PYTHON3_INCLUDE_BYTEARRAYBUILDER_H_

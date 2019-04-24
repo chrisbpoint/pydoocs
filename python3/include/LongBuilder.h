@@ -1,5 +1,5 @@
-#ifndef INCLUDE_LONGBUILDER_H_
-#define INCLUDE_LONGBUILDER_H_
+#ifndef PYTHON3_INCLUDE_LONGBUILDER_H_
+#define PYTHON3_INCLUDE_LONGBUILDER_H_
 
 #include "AbstractBaseBuilder.h"
 
@@ -21,4 +21,4 @@ public:
                     PyObject* data_from_python, PyObject* doocs_parameters) const override;
 };
 
-#endif  // INCLUDE_LONGBUILDER_H_
+#endif  // PYTHON3_INCLUDE_LONGBUILDER_H_

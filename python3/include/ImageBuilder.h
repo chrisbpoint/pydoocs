@@ -1,5 +1,5 @@
-#ifndef INCLUDE_IMAGEBUILDER_H_
-#define INCLUDE_IMAGEBUILDER_H_
+#ifndef PYTHON3_INCLUDE_IMAGEBUILDER_H_
+#define PYTHON3_INCLUDE_IMAGEBUILDER_H_
 
 #include "AbstractBaseBuilder.h"
 
@@ -45,4 +45,4 @@ private:
     std::vector<std::vector<T>> build_array_data(const IMH& image_header, const u_char* image_values) const;
 };
 
-#endif  // INCLUDE_IMAGEBUILDER_H_
+#endif  // PYTHON3_INCLUDE_IMAGEBUILDER_H_
