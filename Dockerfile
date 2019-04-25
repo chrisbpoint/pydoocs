@@ -34,6 +34,7 @@ RUN conda update -n base -c defaults conda && \
     conda create -n python37 python=3.7 $DEPENDENCIES_CONDA && \
     source activate python37 && pip install $DEPENDENCIES_PIP && \
     conda deactivate && \
+    conda config --add channels http://doocspkgs.desy.de/pub/doocsconda/ && \
     apt-get update && apt-get install -y build-essential cmake libldap2-dev && \
     mkdir build
   
