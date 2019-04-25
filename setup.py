@@ -1,80 +1,42 @@
-""" TODO """
+""" Setup file for building and distributing pydoocs packages. """
 import os
-from setuptools import setup, Extension
+import setuptools
 
 import numpy
 from numpy.distutils.misc_util import get_numpy_include_dirs
 
 
-DOOCS_DIR = "/export/doocs/"
+with open("README.md") as f:
+    README = f.read()
 
+with open("LICENSE") as f:
+    LICENSE = f.read()
 
-def get_long_description_from(file_name):
-    """ Utility function to read the README file. """
-    return open(os.path.join(os.path.dirname(__file__), file_name)).read()
+SOURCES = ["AbstractBaseBuilder.cc", "AbstractBaseException.cc", "BooleanBuilder.cc", "build_util.cc",
+           "ByteArrayBuilder.cc", "DoocsException.cc", "DoubleArrayBuilder.cc", "DoubleBuilder.cc",
+           "FloatArrayBuilder.cc", "FloatBuilder.cc", "GspectrumBuilder.cc", "IfffBuilder.cc", "IiiiBuilder.cc",
+           "ImageBuilder.cc", "IntegerArrayBuilder.cc", "IntegerBuilder.cc", "LongArrayBuilder.cc", "LongBuilder.cc",
+           "NamesBuilder.cc", "parse_util.cc", "py_object_builder.cc", "pydoocs.cc", "pydoocs_names.cc",
+           "pydoocs_read.cc", "pydoocs_write.cc", "PyDoocsException.cc", "SpectrumBuilder.cc", "StringBuilder.cc",
+           "sync_util.cc", "TdsArrayBuilder.cc", "TextBuilder.cc", "TsFloatArrayBuilder.cc", "TsDoubleArrayBuilder.cc",
+           "UstrArrayBuilder.cc", "XyArrayBuilder.cc", "XyzsArrayBuilder.cc"]
 
+INCLUDE = os.environ["PY_VERSION"] + "/include/"
+SRC = os.environ["PY_VERSION"] + "/src/"
 
-CLIENTLIB_INCLUDE_DIR = DOOCS_DIR + "lib/include/"
-CLIENTLIB_LIBRARY_DIR = DOOCS_DIR + "lib/"
+PYDOOCS = setuptools.Extension("pydoocs", language="c++", extra_compile_args=["-std=c++11"],
+                               include_dirs=[INCLUDE, SRC, "clientlib"] + get_numpy_include_dirs(),
+                               library_dirs=["doocslibs"], libraries=["pthread", "ldap", "lber"],
+                               extra_objects=["doocslibs/libDOOCSapi.a", "doocslibs/libgul.a"],
+                               sources=[SRC + source for source in SOURCES])
 
-PYDOOCS = Extension("pydoocs",
-                    include_dirs=["./include", "./src", CLIENTLIB_INCLUDE_DIR] + get_numpy_include_dirs(),
-                    library_dirs=[CLIENTLIB_LIBRARY_DIR],
-
-                    # dynamic linking
-                    # runtime_library_dirs=[CLIENT_LIB_DIR],
-                    # libraries=["DOOCSapi"],
-
-                    # static linking
-                    libraries=["pthread", "ldap", "lber"],
-                    extra_objects=[CLIENTLIB_LIBRARY_DIR + "libDOOCSapi.a",
-                                   CLIENTLIB_LIBRARY_DIR + "libgul.a"],
-
-                    language="c++",
-                    extra_compile_args=["-std=c++11"],
-                    sources=["./src/AbstractBaseBuilder.cc",
-                             "./src/AbstractBaseException.cc",
-                             "./src/BooleanBuilder.cc",
-                             "./src/build_util.cc",
-                             "./src/ByteArrayBuilder.cc",
-                             "./src/DoocsException.cc",
-                             "./src/DoubleArrayBuilder.cc",
-                             "./src/DoubleBuilder.cc",
-                             "./src/FloatArrayBuilder.cc",
-                             "./src/FloatBuilder.cc",
-                             "./src/GspectrumBuilder.cc",
-                             "./src/IfffBuilder.cc",
-                             "./src/IiiiBuilder.cc",
-                             "./src/ImageBuilder.cc",
-                             "./src/IntegerArrayBuilder.cc",
-                             "./src/IntegerBuilder.cc",
-                             "./src/LongArrayBuilder.cc",
-                             "./src/LongBuilder.cc",
-                             "./src/NamesBuilder.cc",
-                             "./src/parse_util.cc",
-                             "./src/pydoocs.cc",
-                             "./src/PyDoocsException.cc",
-                             "./src/pydoocs_names.cc",
-                             "./src/pydoocs_read.cc",
-                             "./src/pydoocs_write.cc",
-                             "./src/py_object_builder.cc",
-                             "./src/SpectrumBuilder.cc",
-                             "./src/StringBuilder.cc",
-                             "./src/sync_util.cc",
-                             "./src/TdsArrayBuilder.cc",
-                             "./src/TextBuilder.cc",
-                             "./src/TsFloatArrayBuilder.cc",
-                             "./src/TsDoubleArrayBuilder.cc",
-                             "./src/UstrArrayBuilder.cc",
-                             "./src/XyArrayBuilder.cc",
-                             "./src/XyzsArrayBuilder.cc"])
-
-setup(name="pydoocs",
-      ext_modules=[PYDOOCS],
-      version="2.0.5",
-      description="Python bindings to the standard DOOCS client API (C/C++)",
-      author="Christopher Behrens",
-      author_email="christopher.behrens@desy.de",
-      url="http://doocs-git.desy.de/cgit/doocs/library/python/pydoocs.git",
-      long_description=get_long_description_from("README.md"),
-      install_requires=["numpy>=" + numpy.__version__])
+setuptools.setup(name="pydoocs",
+                 version="2.0.5",
+                 description="Python bindings to the standard DOOCS client API (C/C++)",
+                 long_description=README,
+                 author="Christopher Behrens",
+                 author_email="christopher.behrens@desy.de",
+                 url="https://github.com/chrisbpoint/pydoocs",
+                 license=LICENSE,
+                 ext_modules=[PYDOOCS],
+                 install_requires=["numpy>=" + numpy.__version__])

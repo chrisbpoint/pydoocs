@@ -11,6 +11,7 @@ PyObject* LongArrayBuilder::read(EqAdr*, EqData*, EqData* data_from_doocs, PyObj
 
 PyObject* LongArrayBuilder::long_array_from(EqData* data_from_doocs) const {
     std::vector<std::int64_t> array_data;
+    // TODO(cbehrens): array_data.reserve(data_from_doocs->array_length());
     for (int i = 0; i < data_from_doocs->array_length(); ++i) {
         array_data.push_back(data_from_doocs->get_long(i));
     }
