@@ -22,14 +22,19 @@ COPY LICENSE .
 
 RUN conda update -n base -c defaults conda && \
     pip install $BASE_DEPENDENCIES_PIP && \
-    conda create -n python35 python=3.5 $DEPENDENCIES_CONDA && \
-    source activate python35 && pip install $DEPENDENCIES_PIP && \
-    conda deactivate && \
-    echo "placeholder for python 3.6 and 3.7" && \
     conda create -n python27 python=2.7 $DEPENDENCIES_CONDA && \
     source activate python27 && pip install $DEPENDENCIES_PIP && \
     conda deactivate && \
-    apt-get update && apt-get install -y build-essential cmake libldap2-dev && \    
+    conda create -n python35 python=3.5 $DEPENDENCIES_CONDA && \
+    source activate python35 && pip install $DEPENDENCIES_PIP && \
+    conda deactivate && \
+    conda create -n python36 python=3.6 $DEPENDENCIES_CONDA && \
+    source activate python36 && pip install $DEPENDENCIES_PIP && \
+    conda deactivate && \
+    conda create -n python37 python=3.7 $DEPENDENCIES_CONDA && \
+    source activate python37 && pip install $DEPENDENCIES_PIP && \
+    conda deactivate && \
+    apt-get update && apt-get install -y build-essential cmake libldap2-dev && \
     mkdir build
   
 ENTRYPOINT ["/bin/bash", "-c"]
