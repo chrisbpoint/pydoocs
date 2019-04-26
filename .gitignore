@@ -4,5 +4,6 @@ doocslibs
 build*
 
 __pycache__
+*.pyc
 
 .idea

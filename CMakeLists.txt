@@ -51,6 +51,9 @@ add_library(pydoocs SHARED
         ${INCLUDE}/XyArrayBuilder.h ${SRC}/XyArrayBuilder.cc
         ${INCLUDE}/XyzsArrayBuilder.h ${SRC}/XyzsArrayBuilder.cc)
 
+file(STRINGS VERSION VERSION)
+add_definitions(-DVERSION="${VERSION}")
+
 target_link_libraries(pydoocs libDOOCSapi.a libgul.a pthread ldap lber)
 
 set_target_properties(

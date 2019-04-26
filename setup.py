@@ -6,6 +6,9 @@ import numpy
 from numpy.distutils.misc_util import get_numpy_include_dirs
 
 
+with open("VERSION") as f:
+    VERSION = f.read()
+
 with open("README.md") as f:
     README = f.read()
 
@@ -31,7 +34,7 @@ PYDOOCS = setuptools.Extension("pydoocs", language="c++", extra_compile_args=["-
                                sources=[SRC + source for source in SOURCES])
 
 setuptools.setup(name="pydoocs",
-                 version="2.0.5",
+                 version=VERSION,
                  description="Python bindings to the standard DOOCS client API (C/C++)",
                  long_description=README,
                  author="Christopher Behrens",

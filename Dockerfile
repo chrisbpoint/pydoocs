@@ -17,6 +17,7 @@ COPY tests tests
 COPY CPPLINT.cfg .
 
 COPY setup.py .
+COPY VERSION .
 COPY README.md .
 COPY LICENSE .
 
