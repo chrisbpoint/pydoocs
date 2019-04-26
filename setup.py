@@ -28,6 +28,7 @@ INCLUDE = os.environ["PY_VERSION"] + "/include/"
 SRC = os.environ["PY_VERSION"] + "/src/"
 
 PYDOOCS = setuptools.Extension("pydoocs", language="c++", extra_compile_args=["-std=c++11"],
+                               define_macros=[("VERSION", '"' + VERSION + '"')],
                                include_dirs=[INCLUDE, SRC, "clientlib"] + get_numpy_include_dirs(),
                                library_dirs=["doocslibs"], libraries=["pthread", "ldap", "lber"],
                                extra_objects=["doocslibs/libDOOCSapi.a", "doocslibs/libgul.a"],
