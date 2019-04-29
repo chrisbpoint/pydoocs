@@ -1,6 +1,7 @@
 """ Setup file for building and distributing pydoocs packages. """
 import os
 import setuptools
+import sys
 
 import numpy
 from numpy.distutils.misc_util import get_numpy_include_dirs
@@ -27,8 +28,13 @@ SOURCES = ["AbstractBaseBuilder.cc", "AbstractBaseException.cc", "BooleanBuilder
 INCLUDE = os.environ["PY_VERSION"] + "/include/"
 SRC = os.environ["PY_VERSION"] + "/src/"
 
+if sys.version_info[0] == 3 and sys.version_info[1] == 5:
+    VERSION_MACRO = '\\"' + VERSION + '\\"'  # the compiler for python3.5 somehow behaves differently
+else:
+    VERSION_MACRO = '"' + VERSION + '"'
+
 PYDOOCS = setuptools.Extension("pydoocs", language="c++", extra_compile_args=["-std=c++11"],
-                               define_macros=[("VERSION", '"' + VERSION + '"')],
+                               define_macros=[("VERSION", VERSION_MACRO)],
                                include_dirs=[INCLUDE, SRC, "clientlib"] + get_numpy_include_dirs(),
                                library_dirs=["doocslibs"], libraries=["pthread", "ldap", "lber"],
                                extra_objects=["doocslibs/libDOOCSapi.a", "doocslibs/libgul.a"],
