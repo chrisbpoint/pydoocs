@@ -36,7 +36,7 @@ class PydoocsModuleTest(unittest.TestCase):
                                                                          "message.")))
 
     def test_the_existence_and_correct_value_of_the_version_attribute(self):
-        with open("VERSION") as f:
+        with open("../VERSION") as f:
             version = f.read()
         assert_that("__version__", is_in(dir(self._pydoocs)))
         assert_that(self._pydoocs.__version__, is_(equal_to(version)))
