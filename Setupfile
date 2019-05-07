@@ -4,16 +4,16 @@ DEPENDENCIES_CONDA="numpy conda-build"
 DEPENDENCIES_PIP="pyhamcrest teamcity-messages"
 
 conda update -n base -c defaults conda && \
-(conda-env list | grep python27) || conda create -n python27 python=2.7 $DEPENDENCIES_CONDA && \
+(conda-env list | grep -q python27) || conda create -n python27 python=2.7 $DEPENDENCIES_CONDA && \
 source activate python27 && pip install $DEPENDENCIES_PIP && \
 conda deactivate && \
-(conda-env list | grep python35) || conda create -n python35 python=3.5 $DEPENDENCIES_CONDA && \
+(conda-env list | grep -q python35) || conda create -n python35 python=3.5 $DEPENDENCIES_CONDA && \
 source activate python35 && pip install $DEPENDENCIES_PIP && \
 conda deactivate && \
-(conda-env list | grep python36) || conda create -n python36 python=3.6 $DEPENDENCIES_CONDA && \
+(conda-env list | grep -q python36) || conda create -n python36 python=3.6 $DEPENDENCIES_CONDA && \
 source activate python36 && pip install $DEPENDENCIES_PIP && \
 conda deactivate && \
-(conda-env list | grep python37) || conda create -n python37 python=3.7 $DEPENDENCIES_CONDA && \
+(conda-env list | grep -q python37) || conda create -n python37 python=3.7 $DEPENDENCIES_CONDA && \
 source activate python37 && pip install $DEPENDENCIES_PIP && \
 conda deactivate && \
-(cat ~/.condarc | grep -x "  - http://doocspkgs.desy.de/pub/doocsconda/") || conda config --add channels http://doocspkgs.desy.de/pub/doocsconda/
+(cat ~/.condarc | grep -xq "  - http://doocspkgs.desy.de/pub/doocsconda/") || conda config --add channels http://doocspkgs.desy.de/pub/doocsconda/
