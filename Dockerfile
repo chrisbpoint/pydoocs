@@ -40,3 +40,4 @@ RUN conda update -n base -c defaults conda && \
     mkdir build
   
 ENTRYPOINT ["/bin/bash", "-c"]
+
