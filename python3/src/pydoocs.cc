@@ -41,8 +41,7 @@ static struct PyModuleDef pydoocs = {
 /*
  * Initialize the pydoocs module in accordance with the Python/C API.
  */
-PyMODINIT_FUNC
-PyInit_pydoocs() {
+PyMODINIT_FUNC PyInit_pydoocs() {
     import_array();  // needed in order to be able to return numpy arrays
 
     PyObject* pydoocs_module = PyModule_Create(&pydoocs);

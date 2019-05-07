@@ -53,12 +53,5 @@ add_library(pydoocs SHARED
 
 file(STRINGS VERSION VERSION)
 add_definitions(-DVERSION="${VERSION}")
-
 target_link_libraries(pydoocs libDOOCSapi.a libgul.a pthread ldap lber)
-
-set_target_properties(
-        pydoocs
-        PROPERTIES
-        PREFIX ""
-        OUTPUT_NAME "pydoocs"
-        LINKER_LANGUAGE C)
+set_target_properties(pydoocs PROPERTIES PREFIX "" OUTPUT_NAME "pydoocs" LINKER_LANGUAGE C)
