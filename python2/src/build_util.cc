@@ -23,11 +23,9 @@ namespace build_util {
 
         sync_util::synchronize_readout_for(&address, &data_to_doocs, &data_from_doocs, doocs_parameters, macropulse_number);
 
-        Py_BEGIN_ALLOW_THREADS
         if (EqCall().get(&address, &data_to_doocs, &data_from_doocs)) {
             throw DoocsException::from(data_from_doocs);  // to trigger proper exception handling in the caller (read)
         }
-        Py_END_ALLOW_THREADS
 
         return py_object_builder::read(&address, &data_to_doocs, &data_from_doocs, doocs_parameters, macropulse_number);
     }
