@@ -49,7 +49,8 @@ add_library(pydoocs SHARED
         ${INCLUDE}/TsDoubleArrayBuilder.h ${SRC}/TsDoubleArrayBuilder.cc
         ${INCLUDE}/UstrArrayBuilder.h ${SRC}/UstrArrayBuilder.cc
         ${INCLUDE}/XyArrayBuilder.h ${SRC}/XyArrayBuilder.cc
-        ${INCLUDE}/XyzsArrayBuilder.h ${SRC}/XyzsArrayBuilder.cc)
+        ${INCLUDE}/XyzsArrayBuilder.h ${SRC}/XyzsArrayBuilder.cc
+        ${INCLUDE}/MdaFloatArrayBuilder.h ${SRC}/MdaFloatArrayBuilder.cc)
 
 file(STRINGS VERSION VERSION)
 add_definitions(-DVERSION="${VERSION}")

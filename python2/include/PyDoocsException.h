@@ -154,6 +154,13 @@ public:
     */
     static PyDoocsException no_history_available();
 
+    /**
+    * Method to return the custom exception 'PyDoocsException' for dimensionality not supported yet.
+    *
+    * @return The custom exception 'PyDoocsException' for dimensionality not supported yet.
+    */
+    static PyDoocsException dimensionality_not_supported_yet();
+
 private:
     /*
      * Helper method to return the custom exception of type 'PyDoocsException'.
@@ -179,6 +186,7 @@ private:
     static const char* WRONG_MACROPULSE_FORMAT;
     static const char* WRONG_PARAMETER_FORMAT;
     static const char* NO_HISTORY_AVAILABLE;
+    static const char* DIMENSIONALITY_NOT_SUPPORTED_YET;
 };
 
 #endif  // PYTHON2_INCLUDE_PYDOOCSEXCEPTION_H_

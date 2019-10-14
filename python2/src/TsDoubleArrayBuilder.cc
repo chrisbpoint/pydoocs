@@ -5,7 +5,7 @@
 
 #include "TsDoubleArrayBuilder.h"
 
-#include <iostream>
+
 PyObject* TsDoubleArrayBuilder::read(EqAdr* address, EqData* data_to_doocs, EqData* data_from_doocs, PyObject* doocs_parameters) const {
     if (!doocs_parameters) {
         return ts_double_array_from(data_from_doocs);
@@ -49,6 +49,10 @@ PyObject* TsDoubleArrayBuilder::read(EqAdr* address, EqData* data_to_doocs, EqDa
 
             if (EqCall().get(address, data_to_doocs, data_from_doocs)) {
                 throw DoocsException::from(*data_from_doocs);  // to trigger proper exception handling in the caller
+            }
+
+            if (data_from_doocs->length() == 0) {
+                throw PyDoocsException::no_history_available();
             }
 
             time_vector.clear();

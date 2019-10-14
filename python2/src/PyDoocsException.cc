@@ -21,6 +21,7 @@ const char* PyDoocsException::INVALID_MACROPULSE = "invalid macropulse";
 const char* PyDoocsException::WRONG_MACROPULSE_FORMAT = "wrong macropulse format";
 const char* PyDoocsException::WRONG_PARAMETER_FORMAT = "wrong doocs parameter format";
 const char* PyDoocsException::NO_HISTORY_AVAILABLE = "no history available";
+const char* PyDoocsException::DIMENSIONALITY_NOT_SUPPORTED_YET = "dimensionality not supported yet";
 
 
 PyDoocsException PyDoocsException::type_not_supported_yet() {
@@ -90,6 +91,10 @@ PyDoocsException PyDoocsException::wrong_parameter_format() {
 
 PyDoocsException PyDoocsException::no_history_available() {
     return exception_of_type(NO_HISTORY_AVAILABLE);
+}
+
+PyDoocsException PyDoocsException::dimensionality_not_supported_yet() {
+    return exception_of_type(DIMENSIONALITY_NOT_SUPPORTED_YET);
 }
 
 PyDoocsException PyDoocsException::exception_of_type(const char* error_message) {

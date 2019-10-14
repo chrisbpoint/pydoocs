@@ -16,6 +16,7 @@
 #include "DoubleArrayBuilder.h"
 #include "ByteArrayBuilder.h"
 #include "TsFloatArrayBuilder.h"
+#include "TsDoubleArrayBuilder.h"
 #include "XyzsArrayBuilder.h"
 #include "XyArrayBuilder.h"
 #include "UstrArrayBuilder.h"
@@ -23,6 +24,7 @@
 #include "SpectrumBuilder.h"
 #include "GspectrumBuilder.h"
 #include "ImageBuilder.h"
+#include "MdaFloatArrayBuilder.h"
 
 
 namespace py_object_builder {
@@ -80,6 +82,9 @@ namespace py_object_builder {
             case DATA_A_TS_FLOAT:
                 built_for_return = TsFloatArrayBuilder().read(address, data_to_doocs, data_from_doocs, doocs_parameters);
                 break;
+            case DATA_A_TS_DOUBLE:
+                built_for_return = TsDoubleArrayBuilder().read(address, data_to_doocs, data_from_doocs, doocs_parameters);
+                break;
             case DATA_A_XYZS:
                 built_for_return = XyzsArrayBuilder().read(address, data_to_doocs, data_from_doocs, doocs_parameters);
                 break;
@@ -100,6 +105,9 @@ namespace py_object_builder {
                 break;
             case DATA_IMAGE:
                 built_for_return = ImageBuilder().read(address, data_to_doocs, data_from_doocs, doocs_parameters);
+                break;
+            case DATA_MDA_FLOAT:
+                built_for_return = MdaFloatArrayBuilder().read(address, data_to_doocs, data_from_doocs, doocs_parameters);
                 break;
             default:
                 throw PyDoocsException::type_not_supported_yet();
@@ -166,6 +174,9 @@ namespace py_object_builder {
             case DATA_A_TS_FLOAT:
                 return TsFloatArrayBuilder().write(address, data_to_doocs, data_from_doocs, data_from_python,
                                                    doocs_parameters);
+            case DATA_A_TS_DOUBLE:
+                return TsDoubleArrayBuilder().write(address, data_to_doocs, data_from_doocs, data_from_python,
+                                                    doocs_parameters);
             case DATA_A_XYZS:
                 return XyzsArrayBuilder().write(address, data_to_doocs, data_from_doocs, data_from_python,
                                                 doocs_parameters);
@@ -187,6 +198,9 @@ namespace py_object_builder {
             case DATA_IMAGE:
                 return ImageBuilder().write(address, data_to_doocs, data_from_doocs, data_from_python,
                                             doocs_parameters);
+            case DATA_MDA_FLOAT:
+                return MdaFloatArrayBuilder().write(address, data_to_doocs, data_from_doocs, data_from_python,
+                                                    doocs_parameters);
             default:
                 throw PyDoocsException::type_not_supported_yet();
         }

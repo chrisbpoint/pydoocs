@@ -24,6 +24,7 @@
 #include "SpectrumBuilder.h"
 #include "GspectrumBuilder.h"
 #include "ImageBuilder.h"
+#include "MdaFloatArrayBuilder.h"
 
 
 namespace py_object_builder {
@@ -105,6 +106,9 @@ namespace py_object_builder {
             case DATA_IMAGE:
                 built_for_return = ImageBuilder().read(address, data_to_doocs, data_from_doocs, doocs_parameters);
                 break;
+            case DATA_MDA_FLOAT:
+                built_for_return = MdaFloatArrayBuilder().read(address, data_to_doocs, data_from_doocs, doocs_parameters);
+                break;
             default:
                 throw PyDoocsException::type_not_supported_yet();
         }
@@ -172,7 +176,7 @@ namespace py_object_builder {
                                                    doocs_parameters);
             case DATA_A_TS_DOUBLE:
                 return TsDoubleArrayBuilder().write(address, data_to_doocs, data_from_doocs, data_from_python,
-                                                   doocs_parameters);
+                                                    doocs_parameters);
             case DATA_A_XYZS:
                 return XyzsArrayBuilder().write(address, data_to_doocs, data_from_doocs, data_from_python,
                                                 doocs_parameters);
@@ -194,6 +198,9 @@ namespace py_object_builder {
             case DATA_IMAGE:
                 return ImageBuilder().write(address, data_to_doocs, data_from_doocs, data_from_python,
                                             doocs_parameters);
+            case DATA_MDA_FLOAT:
+                return MdaFloatArrayBuilder().write(address, data_to_doocs, data_from_doocs, data_from_python,
+                                                    doocs_parameters);
             default:
                 throw PyDoocsException::type_not_supported_yet();
         }

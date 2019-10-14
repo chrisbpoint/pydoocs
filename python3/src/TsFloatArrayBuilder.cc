@@ -51,6 +51,10 @@ PyObject* TsFloatArrayBuilder::read(EqAdr* address, EqData* data_to_doocs, EqDat
                 throw DoocsException::from(*data_from_doocs);  // to trigger proper exception handling in the caller
             }
 
+            if (data_from_doocs->length() == 0) {
+                throw PyDoocsException::no_history_available();
+            }
+
             time_vector.clear();
             status_vector.clear();
             history_vector.clear();
