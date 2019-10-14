@@ -23,7 +23,7 @@ SOURCES = ["AbstractBaseBuilder.cc", "AbstractBaseException.cc", "BooleanBuilder
            "NamesBuilder.cc", "parse_util.cc", "py_object_builder.cc", "pydoocs.cc", "pydoocs_names.cc",
            "pydoocs_read.cc", "pydoocs_write.cc", "PyDoocsException.cc", "SpectrumBuilder.cc", "StringBuilder.cc",
            "sync_util.cc", "TdsArrayBuilder.cc", "TextBuilder.cc", "TsFloatArrayBuilder.cc", "TsDoubleArrayBuilder.cc",
-           "UstrArrayBuilder.cc", "XyArrayBuilder.cc", "XyzsArrayBuilder.cc"]
+           "UstrArrayBuilder.cc", "XyArrayBuilder.cc", "XyzsArrayBuilder.cc", "MdaFloatArrayBuilder.cc"]
 
 INCLUDE = os.environ["PY_VERSION"] + "/include/"
 SRC = os.environ["PY_VERSION"] + "/src/"
