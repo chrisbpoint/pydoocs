@@ -29,6 +29,7 @@ add_library(pydoocs SHARED
         ${INCLUDE}/IiiiBuilder.h ${SRC}/IiiiBuilder.cc
         ${INCLUDE}/ImageBuilder.h ${SRC}/ImageBuilder.cc
         ${INCLUDE}/IntegerArrayBuilder.h ${SRC}/IntegerArrayBuilder.cc
+        ${INCLUDE}/ShortArrayBuilder.h ${SRC}/ShortArrayBuilder.cc
         ${INCLUDE}/IntegerBuilder.h ${SRC}/IntegerBuilder.cc
         ${INCLUDE}/LongArrayBuilder.h ${SRC}/LongArrayBuilder.cc
         ${INCLUDE}/LongBuilder.h ${SRC}/LongBuilder.cc

@@ -28,10 +28,11 @@ PyObject* ImageBuilder::image_from(EqData* data_from_doocs) const {
 
     PyObject* image_array = build_image_array(image_header, image_values);
 
-    PyObject* miscellaneous = Py_BuildValue("{sisisisisisisisisIsfsfsfsisisisisi}",
+    PyObject* miscellaneous = Py_BuildValue("{sisisisisisisisisisisIsfsfsfsisisisisi}",
             "width", image_header.width, "height", image_header.height,
             "aoi_width",image_header.aoi_width, "aoi_height", image_header.aoi_height,
             "x_start", image_header.x_start , "y_start", image_header.y_start,
+            "hbin", image_header.hbin , "vbin", image_header.vbin,
             "bpp", image_header.bpp, "ebitpp", image_header.ebitpp,
             "event", image_header.event,
             "fspare2", image_header.fspare2, "fspare3", image_header.fspare3, "fspare4", image_header.fspare4,

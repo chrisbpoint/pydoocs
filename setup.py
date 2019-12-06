@@ -19,11 +19,12 @@ with open("LICENSE") as f:
 SOURCES = ["AbstractBaseBuilder.cc", "AbstractBaseException.cc", "BooleanBuilder.cc", "build_util.cc",
            "ByteArrayBuilder.cc", "DoocsException.cc", "DoubleArrayBuilder.cc", "DoubleBuilder.cc",
            "FloatArrayBuilder.cc", "FloatBuilder.cc", "GspectrumBuilder.cc", "IfffBuilder.cc", "IiiiBuilder.cc",
-           "ImageBuilder.cc", "IntegerArrayBuilder.cc", "IntegerBuilder.cc", "LongArrayBuilder.cc", "LongBuilder.cc",
-           "NamesBuilder.cc", "parse_util.cc", "py_object_builder.cc", "pydoocs.cc", "pydoocs_names.cc",
-           "pydoocs_read.cc", "pydoocs_write.cc", "PyDoocsException.cc", "SpectrumBuilder.cc", "StringBuilder.cc",
-           "sync_util.cc", "TdsArrayBuilder.cc", "TextBuilder.cc", "TsFloatArrayBuilder.cc", "TsDoubleArrayBuilder.cc",
-           "UstrArrayBuilder.cc", "XyArrayBuilder.cc", "XyzsArrayBuilder.cc", "MdaFloatArrayBuilder.cc"]
+           "ImageBuilder.cc", "IntegerArrayBuilder.cc", "ShortArrayBuilder.cc", "IntegerBuilder.cc",
+           "LongArrayBuilder.cc", "LongBuilder.cc", "NamesBuilder.cc", "parse_util.cc", "py_object_builder.cc",
+           "pydoocs.cc", "pydoocs_names.cc", "pydoocs_read.cc", "pydoocs_write.cc", "PyDoocsException.cc",
+           "SpectrumBuilder.cc", "StringBuilder.cc", "sync_util.cc", "TdsArrayBuilder.cc", "TextBuilder.cc",
+           "TsFloatArrayBuilder.cc", "TsDoubleArrayBuilder.cc", "UstrArrayBuilder.cc", "XyArrayBuilder.cc",
+           "XyzsArrayBuilder.cc", "MdaFloatArrayBuilder.cc"]
 
 INCLUDE = os.environ["PY_VERSION"] + "/include/"
 SRC = os.environ["PY_VERSION"] + "/src/"
