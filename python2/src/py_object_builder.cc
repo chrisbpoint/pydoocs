@@ -11,6 +11,7 @@
 #include "IfffBuilder.h"
 #include "IiiiBuilder.h"
 #include "IntegerArrayBuilder.h"
+#include "ShortArrayBuilder.h"
 #include "LongArrayBuilder.h"
 #include "FloatArrayBuilder.h"
 #include "DoubleArrayBuilder.h"
@@ -66,6 +67,9 @@ namespace py_object_builder {
                 break;
             case DATA_A_INT:
                 built_for_return = IntegerArrayBuilder().read(address, data_to_doocs, data_from_doocs, doocs_parameters);
+                break;
+            case DATA_A_SHORT:
+                built_for_return = ShortArrayBuilder().read(address, data_to_doocs, data_from_doocs, doocs_parameters);
                 break;
             case DATA_A_LONG:
                 built_for_return = LongArrayBuilder().read(address, data_to_doocs, data_from_doocs, doocs_parameters);
@@ -158,6 +162,9 @@ namespace py_object_builder {
                                            doocs_parameters);
             case DATA_A_INT:
                 return IntegerArrayBuilder().write(address, data_to_doocs, data_from_doocs, data_from_python,
+                                                   doocs_parameters);
+            case DATA_A_SHORT:
+                return ShortArrayBuilder().write(address, data_to_doocs, data_from_doocs, data_from_python,
                                                    doocs_parameters);
             case DATA_A_LONG:
                 return LongArrayBuilder().write(address, data_to_doocs, data_from_doocs, data_from_python,
