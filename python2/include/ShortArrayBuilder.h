@@ -1,5 +1,5 @@
-#ifndef INCLUDE_SHORTARRAYBUILDER_H_
-#define INCLUDE_SHORTARRAYBUILDER_H_
+#ifndef PYTHON2_INCLUDE_SHORTARRAYBUILDER_H_
+#define PYTHON2_INCLUDE_SHORTARRAYBUILDER_H_
 
 #include "AbstractBaseBuilder.h"
 
@@ -27,4 +27,4 @@ private:
     PyObject* short_array_from(EqData* data_from_doocs) const;
 };
 
-#endif  // INCLUDE_SHORTARRAYBUILDER_H_
+#endif  // PYTHON2_INCLUDE_SHORTARRAYBUILDER_H_

@@ -10,7 +10,7 @@ PyObject* ShortArrayBuilder::read(EqAdr*, EqData*, EqData* data_from_doocs, PyOb
 }
 
 PyObject* ShortArrayBuilder::short_array_from(EqData* data_from_doocs) const {
-    std::vector<short> array_data;
+    std::vector<std::int16_t> array_data;
     for (int i = 0; i < data_from_doocs->array_length(); ++i) {
         array_data.push_back(data_from_doocs->get_short(i));
     }
@@ -34,9 +34,9 @@ PyObject* ShortArrayBuilder::write(EqAdr* address, EqData* data_to_doocs, EqData
             throw PyDoocsException::input_list_too_large();
         }
 
-        std::vector<short> array_data;
+        std::vector<std::int16_t> array_data;
         for (std::int64_t i = 0; i < PyList_Size(data_from_python); ++i) {
-            array_data.push_back(static_cast<short>(PyLong_AsLong(PyList_GetItem(data_from_python, i))));
+            array_data.push_back(static_cast<std::int16_t>(PyLong_AsLong(PyList_GetItem(data_from_python, i))));
         }
 
         return build_write(address, data_to_doocs, data_from_doocs, array_data);
