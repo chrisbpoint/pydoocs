@@ -1,5 +1,5 @@
 #include "UstrArrayBuilder.h"
-
+#include <iostream>
 
 PyObject* UstrArrayBuilder::read(EqAdr*, EqData*, EqData* data_from_doocs, PyObject* doocs_parameters) const {
     if (!doocs_parameters) {
@@ -30,6 +30,28 @@ PyObject* UstrArrayBuilder::ustr_array_from(EqData* data_from_doocs) const {
     return built_for_return;
 }
 
-PyObject* UstrArrayBuilder::write(EqAdr*, EqData*, EqData*, PyObject*, PyObject*) const {
-    throw PyDoocsException::functionality_not_supported_yet();
+PyObject* UstrArrayBuilder::write(EqAdr* address, EqData* data_to_doocs, EqData* data_from_doocs,
+                                  PyObject* data_from_python, PyObject* doocs_parameters) const {
+    if (!doocs_parameters) {
+        if (!PyList_CheckExact(data_from_python) ||
+            PyList_Size(data_from_python) != 1 ||
+            !PyList_CheckExact(PyList_GetItem(data_from_python, 0)) ||
+            PyList_Size(PyList_GetItem(data_from_python, 0)) != 5) {
+            throw PyDoocsException::wrong_input_data_format();
+        }
+
+        USTR* ustr_data = data_from_doocs->get_ustr(0);
+
+        PyObject* ustr = PyList_GetItem(data_from_python, 0);
+
+        ustr_data->i1_data = PyLong_AsLong(PyList_GetItem(ustr, 0));
+        ustr_data->f1_data = PyFloat_AsDouble(PyList_GetItem(ustr, 1));
+        ustr_data->f2_data = PyFloat_AsDouble(PyList_GetItem(ustr, 2));
+        ustr_data->tm = PyLong_AsLong(PyList_GetItem(ustr, 3));
+        ustr_data->str_data.str_data_val = static_cast<char*>(PyUnicode_DATA(PyList_GetItem(ustr, 4)));
+
+        return build_write(address, data_to_doocs, data_from_doocs, ustr_data, 0);
+    } else {
+        throw PyDoocsException::functionality_not_supported_yet();
+    }
 }

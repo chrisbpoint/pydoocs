@@ -130,6 +130,22 @@ protected:
     PyObject* build_write(EqAdr* address, EqData* data_to_doocs, EqData* data_from_doocs, T data) const;
 
     /**
+     * Template helper method to abstract final building PyObject objects for the DOOCS write call of singular data.
+     *
+     * @tparam T Template type of the actual data provided in python and sent to DOOCS.
+     *
+     * @param address The DOOCS EqAdr object encapsulating the DOOCS address for I/O.
+     * @param data_to_doocs The DOOCS EqData object to write the DOOCS data to.
+     * @param data_from_doocs The DOOCS EqData object to retrieve additional DOOCS data from.
+     * @param data The actual data provided in python and sent to DOOCS.
+     * @param index The index of the array sent to DOOCS.
+     *
+     * @return The pointer to an PyObject object while writing data from within python to DOOCS.
+     */
+    template<typename T>
+    PyObject* build_write(EqAdr* address, EqData* data_to_doocs, EqData* data_from_doocs, T data, int index) const;
+
+    /**
      * Template helper method to abstract final building PyObject objects for the DOOCS write call of array data.
      *
      * @tparam T Template type of the actual data provided in python and sent to DOOCS.

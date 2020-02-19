@@ -73,6 +73,18 @@ PyObject* AbstractBaseBuilder::build_write(EqAdr* address, EqData* data_to_doocs
 
 template<typename T>
 PyObject* AbstractBaseBuilder::build_write(EqAdr* address, EqData* data_to_doocs, EqData* data_from_doocs,
+                                           const T data, int index) const {
+    data_to_doocs->set(data, index);
+
+    if (EqCall().set(address, data_to_doocs, data_from_doocs)) {
+        throw DoocsException::from(*data_from_doocs);
+    }
+
+    Py_RETURN_NONE;
+}
+
+template<typename T>
+PyObject* AbstractBaseBuilder::build_write(EqAdr* address, EqData* data_to_doocs, EqData* data_from_doocs,
                                            const std::vector<T>& array_data) const {
     for (unsigned int i = 0; i < array_data.size(); ++i) {
         data_to_doocs->set(array_data[i], static_cast<int>(i));
