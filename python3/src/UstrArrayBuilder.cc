@@ -1,5 +1,5 @@
 #include "UstrArrayBuilder.h"
-#include <iostream>
+
 
 PyObject* UstrArrayBuilder::read(EqAdr*, EqData*, EqData* data_from_doocs, PyObject* doocs_parameters) const {
     if (!doocs_parameters) {
@@ -40,7 +40,7 @@ PyObject* UstrArrayBuilder::write(EqAdr* address, EqData* data_to_doocs, EqData*
             throw PyDoocsException::wrong_input_data_format();
         }
 
-        USTR* ustr_data = data_from_doocs->get_ustr(0);
+        USTR* ustr_data= data_from_doocs->get_ustr(0);
 
         PyObject* ustr = PyList_GetItem(data_from_python, 0);
 
@@ -48,6 +48,7 @@ PyObject* UstrArrayBuilder::write(EqAdr* address, EqData* data_to_doocs, EqData*
         ustr_data->f1_data = PyFloat_AsDouble(PyList_GetItem(ustr, 1));
         ustr_data->f2_data = PyFloat_AsDouble(PyList_GetItem(ustr, 2));
         ustr_data->tm = PyLong_AsLong(PyList_GetItem(ustr, 3));
+        ustr_data->str_data.str_data_len = PyUnicode_GET_LENGTH(PyList_GetItem(ustr, 4));
         ustr_data->str_data.str_data_val = static_cast<char*>(PyUnicode_DATA(PyList_GetItem(ustr, 4)));
 
         return build_write(address, data_to_doocs, data_from_doocs, ustr_data, 0);
