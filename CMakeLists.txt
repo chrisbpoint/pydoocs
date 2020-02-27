@@ -1,13 +1,13 @@
 cmake_minimum_required(VERSION 3.7)
 project(pydoocs)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
 
 set(INCLUDE ${VERSION}/include)
 set(SRC ${VERSION}/src)
 
 include_directories(${INCLUDE})
-include_directories(clientlib)
+include_directories(clientlib/include)
 include_directories(${PYTHON_INCLUDE_DIR})
 include_directories(${NUMPY_INCLUDE_DIR})
 
@@ -55,5 +55,5 @@ add_library(pydoocs SHARED
 
 file(STRINGS VERSION VERSION)
 add_definitions(-DVERSION="${VERSION}")
-target_link_libraries(pydoocs libDOOCSapi.a libgul.a pthread ldap lber)
+target_link_libraries(pydoocs libDOOCSapi.a libgul14.a pthread ldap lber)
 set_target_properties(pydoocs PROPERTIES PREFIX "" OUTPUT_NAME "pydoocs" LINKER_LANGUAGE C)

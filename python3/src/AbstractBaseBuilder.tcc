@@ -1,5 +1,7 @@
 #include <iterator>
 
+using doocs::Timestamp;
+
 
 template<typename T>
 PyObject* AbstractBaseBuilder::build_read(const char type, EqData* data_from_doocs, const T data) const {
@@ -14,8 +16,11 @@ PyObject* AbstractBaseBuilder::build_read(const char type, EqData* data_from_doo
 template<typename T>
 PyObject* AbstractBaseBuilder::build_read(const char type, EqData* data_from_doocs, const T data,
                                           const PyObject* miscellaneous) const {
-    int timestamp_sec, timestamp_micro_sec;
-    data_from_doocs->time(&timestamp_sec, &timestamp_micro_sec);
+    Timestamp timestamp = data_from_doocs->get_timestamp();
+    Timestamp::SecondsAndMicroseconds seconds_and_microseconds = timestamp.get_seconds_and_microseconds_since_epoch();
+
+    int timestamp_sec = seconds_and_microseconds.seconds;
+    int timestamp_micro_sec = seconds_and_microseconds.microseconds;
 
     const std::string output_format{std::string("{s") + type + "sssdslsO}"};  // according to the Python/C API
 

@@ -24,7 +24,7 @@ PyObject* ImageBuilder::image_from(EqData* data_from_doocs) const {
         throw PyDoocsException::image_data_invalid();
     }
 
-    data_from_doocs->get_timestamp(&time_t_dummy, &time_t_dummy, &status);
+    data_from_doocs->get_image_timestamp_and_status(&time_t_dummy, &time_t_dummy, &status);
 
     PyObject* image_array = build_image_array(image_header, image_values);
 

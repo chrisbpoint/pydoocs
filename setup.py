@@ -34,11 +34,11 @@ if sys.version_info[0] == 3 and sys.version_info[1] == 5:
 else:
     VERSION_MACRO = '"' + VERSION + '"'
 
-PYDOOCS = setuptools.Extension("pydoocs", language="c++", extra_compile_args=["-std=c++11"],
+PYDOOCS = setuptools.Extension("pydoocs", language="c++", extra_compile_args=["-std=c++14"],
                                define_macros=[("VERSION", VERSION_MACRO)],
-                               include_dirs=[INCLUDE, SRC, "clientlib"] + get_numpy_include_dirs(),
+                               include_dirs=[INCLUDE, SRC, "clientlib/include"] + get_numpy_include_dirs(),
                                library_dirs=["doocslibs"], libraries=["pthread", "ldap", "lber"],
-                               extra_objects=["doocslibs/libDOOCSapi.a", "doocslibs/libgul.a"],
+                               extra_objects=["doocslibs/libDOOCSapi.a", "doocslibs/libgul14.a"],
                                sources=[SRC + source for source in SOURCES])
 
 setuptools.setup(name="pydoocs",
